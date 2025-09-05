@@ -1,0 +1,8 @@
+const textArray=["Welcome here!","You’ve reached Tomáš Majerčík. :)"];const typingSpeed=100;const deletingSpeed=50;const baseTypingSpeed=100;const baseDeletingSpeed=50;const delayAfterTyping=5000;const delayBeforeTyping=500;const animText=document.getElementById("anim-text");let textIndex=0;let charIndex=0;let isDeleting=!1;function randomChar(){const chars="abcdefghijklmnopqrstuvwxyz";return chars[Math.floor(Math.random()*chars.length)]}
+function randomCharSmile(){const chars=";':[].,";return chars[Math.floor(Math.random()*chars.length)]}
+function randomDelay(base,variance=100){if(Math.random()<0.02){return 1000}
+return base+Math.floor(Math.random()*variance)}
+function typeEffect(){const currentText=textArray[textIndex];const visibleText=currentText.substring(0,charIndex);animText.innerText=visibleText;if(!isDeleting&&Math.random()<0.03&&charIndex>2&&charIndex<20){animText.textContent+=randomChar();setTimeout(()=>{animText.textContent=animText.textContent.slice(0,-1);typeEffect()},300);return}
+if(!isDeleting&&Math.random()<0.30&&charIndex>30&&charIndex<32){animText.textContent+=randomCharSmile();setTimeout(()=>{animText.textContent=animText.textContent.slice(0,-1);typeEffect()},300);return}
+if(!isDeleting&&charIndex<currentText.length){charIndex++;setTimeout(typeEffect,randomDelay(baseTypingSpeed))}else if(isDeleting&&charIndex>0){charIndex--;setTimeout(typeEffect,deletingSpeed)}else{if(!isDeleting){isDeleting=!0;setTimeout(typeEffect,delayAfterTyping)}else{isDeleting=!1;textIndex=(textIndex+1)%textArray.length;setTimeout(typeEffect,delayBeforeTyping)}}}
+typeEffect()
