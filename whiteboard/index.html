@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="bootstrap 5/css/bootstrap.css">
+    <link rel= "stylesheet" href="style.css">
+    <title>simple whiteboard</title>
+    <link rel="icon" href= "">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href="style.css" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <main>
+        
+        <p>
+            The simplest whiteboard .
+        </p>
+        <div class="menu" id="menu">
+            <input type="color" id="c" onchange="getThing()" style="border-bottom-width: 0px;border-bottom-style: solid;border-top-width: 0px;border-top-style: solid;border-right-width: 0px;border-right-style: solid;border-left-width: 0px;border-left-style: solid;">
+            <input type="number" value="10" id="s" onchange="getThing()" min="1" max="100">
+            <input type="button" id="clr" value="CLEAR" onClick="window.location.reload();">
+            <input type="button" id="erase" value="ERASE" onClick="erase();">
+        </div>
+
+        <canvas id="canvas"></canvas>
+
+
+
+
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
